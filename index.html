@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+	    <div class="container">
+			<div id="life" class="text-center">
+				<button class="btn btn-danger" onclick="clearGame()">Clear</button>
+				<button class="btn btn-warning" onclick="nexGeneration()">Next</button>
+				<button id="buttonAnimate" class="btn btn-primary" onclick="start()">Run</button>
+				<button id="buttonAnimate" class="btn btn-warning" onclick="stop()">Stop</button>
+				<canvas id="canvasCurrent" width="456" height="456" on></canvas> 
+			    <canvas id="canvasHide" width="456" height="456" on>Canvas is not supported by this browser.</canvas>
+			</div>
+		</div>
+		<script type="text/javascript" src="bundle.js" charset="utf-8"></script>
+    </body>
+</html>
