@@ -37,7 +37,7 @@ import MouseEvents from './service/MouseEvents';
 
 	let start = () => {
 		if (!gameTimer) {
-			gameTimer = setInterval(() => { nexGeneration() }, 1000);
+			gameTimer = setInterval(() => { nexGeneration() }, 500);
 		}
 	}
 

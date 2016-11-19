@@ -26,21 +26,21 @@ export default class City {
 	}
 
 	getCitizen(x, y) {
-		if (x < 35 && y < 35) {
+		if (x > 0 && y > 0 && x <= 36 && y <= 36) {
 			let position = (((x-1) * this.gameSize) + (y - 1));
 			return this.population[position];
 		}
 	}
 
 	killCitizen(x, y) {
-		if (x < 35 && y < 35) {
+		if (x <= 35 && y <= 35) {
 			let position = (((x-1) * this.gameSize) + (y - 1));
 			this.futurePopulation[position].kill();
 		}
 	}
 
 	createCitizen(x, y) {
-		if (x < 35 && y < 35) {
+		if (x <= 35 && y <= 35) {
 			let position = (((x-1) * this.gameSize) + (y - 1));
 			this.futurePopulation[position].born();
 		}

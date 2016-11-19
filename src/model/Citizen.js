@@ -33,6 +33,34 @@ export default class Citizen {
 		};
 	}
 
+	getTopLeftNeighbour() {
+		return {
+			x: this.x - 1,
+			y: this.y - 1
+		};
+	}
+
+	getTopRightNeighbour() {
+		return {
+			x: this.x - 1,
+			y: this.y + 1
+		};
+	}
+
+	getDownLeftNeighbour() {
+		return {
+			x: this.x + 1,
+			y: this.y - 1
+		};
+	}
+
+	getDownRightNeighbour() {
+		return {
+			x: this.x + 1,
+			y: this.y + 1
+		};
+	}
+
 	getCurrentPosition() {
 		return {
 			x: this.x,

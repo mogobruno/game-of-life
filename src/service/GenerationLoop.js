@@ -9,7 +9,11 @@ export default function GenerationLoop(city) {
 				citizen.getTopNeighbour(),
 				citizen.getDownNeighbour(),
 				citizen.getRightNeighbour(),
-				citizen.getLeftNeighbour()
+				citizen.getLeftNeighbour(),
+				citizen.getTopLeftNeighbour(),
+				citizen.getTopRightNeighbour(),
+				citizen.getDownLeftNeighbour(),
+				citizen.getDownRightNeighbour()
 			]
 
 			let neighboursLifes = lifeCounter(neighboursCoords)
@@ -27,8 +31,6 @@ export default function GenerationLoop(city) {
 	let forAliveCitizen = (citizenCoords, neighboursLifes) => {
 		if (neighboursLifes < 2) {
 			city.killCitizen(citizenCoords.x, citizenCoords.y)
-		} else if (neighboursLifes >=2 && neighboursLifes <=3) {
-			city.createCitizen(citizenCoords.x, citizenCoords.y)
 		} else if (neighboursLifes > 3) {
 			city.killCitizen(citizenCoords.x, citizenCoords.y)
 		}		
