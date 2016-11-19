@@ -5,11 +5,12 @@ import City from './model/City';
 import Render from './service/Render';
 import GenerationLoop from './service/GenerationLoop';
 import MouseEvents from './service/MouseEvents';
+import config from './config/config';
 
 ((global) => {
 	
 	let render = Render();
-	let city = new City(35);
+	let city = new City(config.gameSize);
 	let generation = GenerationLoop(city);
 	let gameTimer;
 
@@ -37,7 +38,7 @@ import MouseEvents from './service/MouseEvents';
 
 	let start = () => {
 		if (!gameTimer) {
-			gameTimer = setInterval(() => { nexGeneration() }, 500);
+			gameTimer = setInterval(() => { nexGeneration() }, config.gameTimer);
 		}
 	}
 
