@@ -26,7 +26,7 @@ export default class City {
 	}
 
 	getCitizen(x, y) {
-		if (x > 0 && y > 0 && x <= 36 && y <= 36) {
+		if (x > 0 && y > 0 && x <= 35 && y <= 35) {
 			let position = (((x-1) * this.gameSize) + (y - 1));
 			return this.population[position];
 		}
@@ -48,23 +48,22 @@ export default class City {
 
 	nextGeneration() {
 		this.generation++;
-		this.population = this.futurePopulation;
+		this.recalculatePopulation();
 	}
 
 	recalculatePopulation() {
-		this.futurePopulation.forEach(futureCitizen => {
+		this.futurePopulation.forEach((futureCitizen, key) => {
 			var coords = futureCitizen.getCurrentPosition();
-			let position = (((coords.x-1) * this.gameSize) + (coords.y - 1));
 			if (futureCitizen.isAlive()) {
-				this.population[position].born();
+				this.population[key].born();
 			} else {
-				this.population[position].kill();
+				this.population[key].kill();
 			}
 		});
 	}	
 
 	getPopulation() {
-		return this.population;
+		return this.futurePopulation;
 	}
 
 	getGeneration() {
