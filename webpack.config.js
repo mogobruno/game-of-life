@@ -1,4 +1,9 @@
- module.exports = {
+var merge = require('webpack-merge');
+
+var TARGET = process.env.npm_lifecycle_event;
+var isTest = TARGET === 'test' || TARGET === 'test-watch';
+
+var config = {
     entry: "./src/game.js",
     output: {
         path: __dirname,
@@ -13,3 +18,15 @@
         ]
     }
 };
+
+if (isTest) {
+    config = merge.smart(config, {
+        module: {
+            preLoaders: [
+                { test:  /.js$/, exclude: [ /node_modules/, /\.spec\.js$/], loader: 'isparta-loader' }
+            ]
+        }
+    })
+}
+
+module.exports = config
