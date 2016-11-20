@@ -32,5 +32,5 @@ export default function Render() {
 	return {
 		newGeneration,
 		drawGrid
-	}
+	};
 }

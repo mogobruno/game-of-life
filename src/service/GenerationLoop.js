@@ -14,14 +14,14 @@ export default function GenerationLoop(city) {
 				citizen.getTopRightNeighbour(),
 				citizen.getDownLeftNeighbour(),
 				citizen.getDownRightNeighbour()
-			]
+			];
 
-			let neighboursLifes = lifeCounter(neighboursCoords)
+			let neighboursLifes = lifeCounter(neighboursCoords);
 
 			if (citizen.isAlive()) {
-				forAliveCitizen(citizen.getCurrentPosition(), neighboursLifes)	
+				forAliveCitizen(citizen.getCurrentPosition(), neighboursLifes);
 			} else {
-				forZombiesCitizen(citizen.getCurrentPosition(), neighboursLifes)
+				forZombiesCitizen(citizen.getCurrentPosition(), neighboursLifes);
 			}
 		})
 
@@ -30,22 +30,22 @@ export default function GenerationLoop(city) {
 
 	let forAliveCitizen = (citizenCoords, neighboursLifes) => {
 		if (neighboursLifes < 2) {
-			city.killCitizen(citizenCoords.x, citizenCoords.y)
+			city.killCitizen(citizenCoords.x, citizenCoords.y);
 		} else if (neighboursLifes > 3) {
-			city.killCitizen(citizenCoords.x, citizenCoords.y)
+			city.killCitizen(citizenCoords.x, citizenCoords.y);
 		}		
 	}
 
 	let forZombiesCitizen = (citizenCoords, neighboursLifes) => {
 		if (neighboursLifes === 3) {
-			city.createCitizen(citizenCoords.x, citizenCoords.y)
+			city.createCitizen(citizenCoords.x, citizenCoords.y);
 		}		
 	}
 
 	let lifeCounter = (neighboursCoords) => {
 		let lifes = 0;
 		neighboursCoords.forEach(neighbourCoords => {
-			let neighbour = city.getCitizen(neighbourCoords.x, neighbourCoords.y)
+			let neighbour = city.getCitizen(neighbourCoords.x, neighbourCoords.y);
 			if (neighbour && neighbour.isAlive()) {
 				lifes++;
 			}
@@ -55,6 +55,6 @@ export default function GenerationLoop(city) {
 
 	return {
 		next		
-	}
+	};
 
 }

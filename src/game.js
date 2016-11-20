@@ -49,9 +49,9 @@ import config from './config/config';
 		}
 	}
 
-	global.nexGeneration = nexGeneration
-	global.clearGame = clearGame
-	global.start = start
-	global.stop = stop
+	global.nexGeneration = nexGeneration;
+	global.clearGame = clearGame;
+	global.start = start;
+	global.stop = stop;
 
-})(window)
+})(window);

@@ -11,11 +11,11 @@ export default function MouseEvents(render, city) {
 		render.newGeneration(city);
 	}
 
-	canvasHide.onmouseup = function canvasMouseDown(ev) {
+	canvasHide.onmouseup = function canvasMouseUp(ev) {
 		isMouseDown = false;
 	}
 
-	canvasHide.onmousemove = function canvasMouseDown(ev) {
+	canvasHide.onmousemove = function canvasMouseMove(ev) {
 		if (isMouseDown) {
 			let coords = this.relMouseCoords(ev);
 			city.createCitizen(coords.x, coords.y);
