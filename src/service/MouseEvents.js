@@ -1,23 +1,23 @@
 export default function MouseEvents(render, city) {
-	var isMouseDown = false;
+	let isMouseDown = false;
 
 	canvasHide.onmousedown = function canvasMouseDown(ev) {
 		isMouseDown = true;
-		var x = ev.pageX - this.offsetLeft;
-		var y = ev.pageY - this.offsetTop;
-		var coords = this.relMouseCoords(ev);
+		let x = ev.pageX - this.offsetLeft;
+		let y = ev.pageY - this.offsetTop;
+		let coords = this.relMouseCoords(ev);
 		city.createCitizen(coords.x, coords.y);
 		city.recalculatePopulation();
 		render.newGeneration(city);
 	}
 
-	canvasHide.onmouseup = function canvasMouseDown(ev) {
+	canvasHide.onmouseup = function canvasMouseUp(ev) {
 		isMouseDown = false;
 	}
 
-	canvasHide.onmousemove = function canvasMouseDown(ev) {
+	canvasHide.onmousemove = function canvasMouseMove(ev) {
 		if (isMouseDown) {
-			var coords = this.relMouseCoords(ev);
+			let coords = this.relMouseCoords(ev);
 			city.createCitizen(coords.x, coords.y);
 			city.recalculatePopulation();
 			render.newGeneration(city);
@@ -25,11 +25,11 @@ export default function MouseEvents(render, city) {
 	}
 
 	function relMouseCoords(event) {
-		var totalOffsetX = 0;
-		var totalOffsetY = 0;
-		var canvasX = 0;
-		var canvasY = 0;
-		var currentElement = this;
+		let totalOffsetX = 0;
+		let totalOffsetY = 0;
+		let canvasX = 0;
+		let canvasY = 0;
+		let currentElement = this;
 
 		do {
 			totalOffsetX += currentElement.offsetLeft;

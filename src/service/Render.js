@@ -17,7 +17,7 @@ export default function Render() {
 	}
 
 	let drawGrid = () => {
-		var context = canvasCurrent.getContext('2d');
+		let context = canvasCurrent.getContext('2d');
 		context.strokeStyle = 'gray';
 		context.beginPath();
 		for (var i = 0; i <= config.gameSize; i++) {
@@ -32,5 +32,5 @@ export default function Render() {
 	return {
 		newGeneration,
 		drawGrid
-	}
+	};
 }
