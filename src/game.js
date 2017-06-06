@@ -37,6 +37,7 @@ import config from './config/config';
 	}
 
 	
+	
 	let start = () => {
 		if (!gameTimer) {
 			gameTimer = setInterval(() => { nexGeneration() }, config.gameTimer);
