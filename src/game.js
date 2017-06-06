@@ -13,7 +13,8 @@ import config from './config/config';
 	let city = new City(config.gameSize);
 	let generation = GenerationLoop(city);
 	let gameTimer;
-
+	let test;
+	
 	render.drawGrid();
 
 	city.populate();
@@ -36,6 +37,8 @@ import config from './config/config';
 		render.newGeneration(city);
 	}
 
+	
+	
 	let start = () => {
 		if (!gameTimer) {
 			gameTimer = setInterval(() => { nexGeneration() }, config.gameTimer);
