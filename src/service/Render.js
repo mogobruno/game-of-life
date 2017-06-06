@@ -3,7 +3,7 @@ import config from '../config/config';
 export default function Render() {
 	let newGeneration = (city) => {
 		let context = canvasHide.getContext('2d');
-		context.fillStyle = '#c3c3c3';
+		context.fillStyle = '#ffffff';
 		context.clearRect(0, 0, config.gameSize * config.cellSize, config.gameSize * config.cellSize);
 		context.clearRect(0, 0, config.gameSize * config.cellSize, config.gameSize * config.cellSize);
 		let population = city.getPopulation();
