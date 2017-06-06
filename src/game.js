@@ -36,6 +36,7 @@ import config from './config/config';
 		render.newGeneration(city);
 	}
 
+	
 	let start = () => {
 		if (!gameTimer) {
 			gameTimer = setInterval(() => { nexGeneration() }, config.gameTimer);
